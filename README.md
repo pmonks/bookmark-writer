@@ -6,7 +6,7 @@ A simple and dumb Clojure library that provides the ability to set the text valu
 ## Getting the bits
 
 ### Dependencies
- * [Oracle JDK 1.7+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+ * [Oracle JDK 1.6+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
  * [Clojure v1.5+](http://clojure.org/downloads)
  * [Leiningen v2.0+](http://leiningen.org/#install)
  

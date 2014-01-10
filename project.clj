@@ -13,19 +13,12 @@
   :url "https://github.com/pmonks/bookmark-writer"
   :license {:name "Creative Commons Attribution-ShareAlike 3.0 Unported License."
             :url "http://creativecommons.org/licenses/by-sa/3.0/"}
-  :javac-target "1.7"
   :dependencies [
-                  [org.clojure/clojure                  "1.5.1"]
-                  [org.clojure/tools.cli                "0.3.1"]
-                  [org.clojure/tools.trace              "0.7.6"]
-                  [org.clojure/tools.logging            "0.2.6"]
-                  [ch.qos.logback/logback-classic       "1.0.13"]
-                  [org.docx4j/docx4j                    "3.0.0" :exclusions [org.slf4j/slf4j-log4j12]]
+                  [org.clojure/clojure            "1.5.1"]
+                  [org.clojure/tools.logging      "0.2.6"]
+                  [ch.qos.logback/logback-classic "1.0.13"]
+                  [org.docx4j/docx4j              "3.0.0" :exclusions [org.slf4j/slf4j-log4j12]]
                 ]
-  :profiles {:dev {:dependencies [
-                                   [midje "1.6.0"]
-                                   [clj-ns-browser "1.3.1"]
-                                 ]}}
   :resource-paths ["config"]
   :java-source-paths ["src/java"]
   :jvm-opts ^:replace []  ; Stop Leiningen from turning off JVM optimisations - makes it slower to start but ensures code runs as fast as possible
