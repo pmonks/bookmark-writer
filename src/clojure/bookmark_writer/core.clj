@@ -18,14 +18,14 @@
                               "BM_InTable"          "#THIS TEXT WAS INSERTED INTO BOOKMARK \"BM_InTable\"#",
                               "NonExistentBookmark" "!!THIS TEXT SHOULD NOT BE VISIBLE ANYWHERE!!" })
 
-(defn- make-stupid-java-map
+(defn- make-stupid-docx4j-map
   [bookmark-name-value-map]
   (reduce merge (map #(hash-map (org.docx4j.model.fields.merge.DataFieldName. %) (get bookmark-name-value-map %)) (keys bookmark-name-value-map))))
 
 (defn- replace-bookmark-text!
   [^org.docx4j.openpackaging.packages.WordprocessingMLPackage wordml-pkg
    ^java.util.Map bookmark-name-value-map]
-  (let [corrected-map (make-stupid-java-map bookmark-name-value-map)]
+  (let [corrected-map (make-stupid-docx4j-map bookmark-name-value-map)]
     (org.docx4j.samples.BookmarksReplaceWithText/replaceBookmarkContents (-> wordml-pkg .getMainDocumentPart
                                                                                         .getJaxbElement
                                                                                         .getBody
