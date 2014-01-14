@@ -19,7 +19,8 @@
                   [ch.qos.logback/logback-classic "1.0.13"]
                   [org.docx4j/docx4j              "3.0.0" :exclusions [org.slf4j/slf4j-log4j12]]
                 ]
-  :resource-paths ["config"]
+  :resource-paths    ["config"]
+  :source-paths      ["src/clojure"]
   :java-source-paths ["src/java"]
   :jvm-opts ^:replace []  ; Stop Leiningen from turning off JVM optimisations - makes it slower to start but ensures code runs as fast as possible
   :main bookmark-writer.core)
