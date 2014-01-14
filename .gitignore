@@ -7,3 +7,4 @@ pom.xml
 .lein-deps-sum
 /test/testoutput.safetodelete.docx
 bookmark-writer.log
+.lein-repl-history
