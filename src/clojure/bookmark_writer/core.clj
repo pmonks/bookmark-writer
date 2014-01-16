@@ -11,8 +11,8 @@
   (:require [clojure.tools.logging :as log])
   (:gen-class))
 
-(def ^:private template-filename "test/test.docx")
-(def ^:private output-filename "test/testoutput.safetodelete.docx")
+(def ^:private test-filename "test/test.docx")
+(def ^:private test-output-filename "test/testoutput.safetodelete.docx")
 (def ^:private bookmark-map { "BM_Text"             "#THIS TEXT WAS INSERTED INTO BOOKMARK \"BM_Text\"#",
                               "BM_NoText"           "#THIS TEXT WAS INSERTED INTO BOOKMARK \"BM_NoText\"#",
                               "BM_InTable"          "#THIS TEXT WAS INSERTED INTO BOOKMARK \"BM_InTable\"#",
@@ -39,8 +39,8 @@
   [input-document
    output-document
    bookmark-map]
-  (let [template-document (org.docx4j.Docx4J/load (clojure.java.io/file input-document))]
-    (replace-bookmark-text! template-document bookmark-map) 
+  (let [template-document (org.docx4j.Docx4J/load input-document)]
+    (replace-bookmark-text! template-document bookmark-map)
     (org.docx4j.Docx4J/save template-document (clojure.java.io/file output-document) org.docx4j.Docx4J/FLAG_SAVE_ZIP_FILE)))
 
 (defn -main
@@ -49,4 +49,4 @@
   ;; work around dangerous default behaviour in Clojure
   (alter-var-root #'*read-eval* (constantly false))
 
-  (populate-bookmarks! template-filename output-filename bookmark-map))
+  (populate-bookmarks! (clojure.java.io/file test-filename) test-output-filename bookmark-map))
