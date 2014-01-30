@@ -16,7 +16,7 @@
   :dependencies [
                   [org.clojure/clojure            "1.5.1"]
                   [org.clojure/tools.logging      "0.2.6"]
-                  [ch.qos.logback/logback-classic "1.0.13"]
+                  [ch.qos.logback/logback-classic "1.1.0"]
                   [org.docx4j/docx4j              "3.0.0" :exclusions [log4j org.slf4j/slf4j-log4j12]]
                 ]
   :resource-paths    ["config"]
