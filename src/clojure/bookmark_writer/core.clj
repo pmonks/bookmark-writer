@@ -35,7 +35,7 @@
 (defn populate-bookmarks!
   "Reads the file identified by input-document (which must be a valid Office XML document), replaces the text
    of all bookmarks in that document with the values defined in the bookmark-map (keys=bookmark names, values=desired text
-   for those bookmarks), and then writes the resulting Word document to the file identified by output-document."
+   for each bookmark), and then writes the resulting Word document to the file identified by output-document."
   [input-document
    output-document
    bookmark-map]
