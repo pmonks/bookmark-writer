@@ -130,11 +130,23 @@ public class BookmarksReplaceWithText {
                     }
                 }
                     
-                // now add a run
-                org.docx4j.wml.R  run = factory.createR();
-                org.docx4j.wml.Text  t = factory.createText();
-                run.getContent().add(t);        
-                t.setValue(value);
+                // now add a run, replacing newline characters with BR tags
+                org.docx4j.wml.R  run      = factory.createR();
+                String[]          lines    = value.split("\n");
+                String            lastLine = lines[lines.length - 1];
+
+                for (final String line : lines)
+                {
+                    org.docx4j.wml.Text  t = factory.createText();
+                    run.getContent().add(t);        
+                    t.setValue(line);
+
+                    if (!line.equals(lastLine))
+                    {
+                        org.docx4j.wml.Br br = factory.createBr();
+                        run.getContent().add(br);
+                    }
+                }
                 
                 theList.add(rangeStart, run);
                 
