@@ -46,7 +46,4 @@
 (defn -main
   "Simple and dumb test case."
   [& args]
-  ;; work around dangerous default behaviour in Clojure
-  (alter-var-root #'*read-eval* (constantly false))
-
   (populate-bookmarks! (clojure.java.io/file test-filename) test-output-filename bookmark-map))
