@@ -128,31 +128,35 @@ public class BookmarksReplaceWithText {
                     for (int j =rangeEnd; j>=rangeStart; j--) {
                         theList.remove(j);
                     }
-                }
                     
-                // now add a run, replacing newline characters with BR tags
-                org.docx4j.wml.R  run      = factory.createR();
-                String[]          lines    = value.split("\n");
-                String            lastLine = lines[lines.length - 1];
+                    // now add a run, replacing newline characters with BR tags
+                    org.docx4j.wml.R  run      = factory.createR();
+                    String[]          lines    = value.split("\n");
+                    String            lastLine = lines[lines.length - 1];
 
-                for (final String line : lines)
-                {
-                    org.docx4j.wml.Text  t = factory.createText();
-                    run.getContent().add(t);        
-                    t.setValue(line);
-
-                    if (!line.equals(lastLine))
+                    for (final String line : lines)
                     {
-                        org.docx4j.wml.Br br = factory.createBr();
-                        run.getContent().add(br);
+                        org.docx4j.wml.Text  t = factory.createText();
+                        run.getContent().add(t);        
+                        t.setValue(line);
+
+                        if (!line.equals(lastLine))
+                        {
+                            org.docx4j.wml.Br br = factory.createBr();
+                            run.getContent().add(br);
+                        }
                     }
-                }
-                
-                theList.add(rangeStart, run);
+                    
+                    theList.add(rangeStart, run);
                 
 //            } catch (ClassCastException cce) {
 //                log.error(cce.getMessage(), cce);
 //            }
+                }
+                else
+                {
+                    log.warn("Bookmark " + bm.getName() + " doesn't appear to be valid.");
+                }
         }
 
         
