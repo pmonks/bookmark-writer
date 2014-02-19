@@ -123,10 +123,26 @@ public class BookmarksReplaceWithText {
                 }
 
                 if (rangeStart>0 && rangeEnd>=rangeStart) {
-                    
+
+                    int insertIndex = rangeStart;
+
                     // Delete the bookmark range
                     for (int j =rangeEnd; j>=rangeStart; j--) {
-                        theList.remove(j);
+                        Object obj = XmlUtils.unwrap(theList.get(j));
+
+                        if (obj instanceof CTBookmark)  // We found the start of an overlapping bookmark
+                        {
+                            log.warn("Overlapping bookmarks detected: " + bm.getName() + " and " + ((CTBookmark)obj).getName());
+                        }
+                        else if (obj instanceof CTMarkupRange)  // We found the end of an overlapping bookmark
+                        {
+                            log.warn("Overlapping bookmarks detected: " + bm.getName() + " and " + ((CTMarkupRange)obj).getId());
+                            insertIndex++;
+                        }
+                        else
+                        {
+                            theList.remove(j);
+                        }
                     }
                     
                     // now add a run, replacing newline characters with BR tags
@@ -147,7 +163,8 @@ public class BookmarksReplaceWithText {
                         }
                     }
                     
-                    theList.add(rangeStart, run);
+                    theList.add(insertIndex, run);
+//                    theList.add(rangeStart, run);
                 
 //            } catch (ClassCastException cce) {
 //                log.error(cce.getMessage(), cce);
@@ -155,7 +172,7 @@ public class BookmarksReplaceWithText {
                 }
                 else
                 {
-                    log.warn("Bookmark " + bm.getName() + " doesn't appear to be valid; rangeStart=" + rangeStart + ", rangeEnd=" + rangeEnd);
+                    log.warn("Bookmark " + bm.getName() + " doesn't appear to be valid; rangeStart=" + rangeStart + ", rangeEnd=" + rangeEnd + ". Probable cause: overlapping bookmarks.");
                 }
         }
 
