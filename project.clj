@@ -24,6 +24,7 @@
                                    [clj-ns-browser "1.3.1"]
                                  ]}
              :uberjar {:aot :all}}
+  :uberjar-merge-with {#"META-INF/services/.*" [slurp str spit]}   ; Merge Java ServiceLocator descriptors during uberjar construction
   :resource-paths    ["config"]
   :source-paths      ["src/clojure"]
   :java-source-paths ["src/java"]
