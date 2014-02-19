@@ -155,7 +155,7 @@ public class BookmarksReplaceWithText {
                 }
                 else
                 {
-                    log.warn("Bookmark " + bm.getName() + " doesn't appear to be valid.");
+                    log.warn("Bookmark " + bm.getName() + " doesn't appear to be valid; rangeStart=" + rangeStart + ", rangeEnd=" + rangeEnd);
                 }
         }
 
