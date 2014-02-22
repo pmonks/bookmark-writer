@@ -1,24 +1,34 @@
-bookmark-writer
-===============
+# bookmarks-writer
 
 A simple and dumb Clojure library that provides the ability to set the text values of bookmarks in Word 2007 (.docx) format files.
+Little more than a Clojure wrapper around [this docx4j sample class](https://github.com/plutext/docx4j/blob/master/src/samples/docx4j/org/docx4j/samples/BookmarksReplaceWithText.java).
 
-## Getting the bits
+## Installation
 
-### Dependencies
- * [Oracle JDK 1.6+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
- * [Clojure v1.5+](http://clojure.org/downloads)
- * [Leiningen v2.0+](http://leiningen.org/#install)
- 
-Note: these dependencies should be installed via your OS package manager, where possible.  On Mac OSX, I strongly recommend [Homebrew](http://brew.sh/).
+`bookmarks-writer` is available as a Maven artifact from [Clojars](https://clojars.org/org.clojars.pmonks/bookmark-writer):
 
-### Usage
+```clojure
+[org.clojars.pmonks/bookmarks-writer "0.1.0"]
+```
 
-TODO: upload to clojars and put usage information here.
+## Usage
 
-### Source Code
+The library's functionality is provided in the `bookmark-writer.core` namespace.
 
-Checkout the source from [GitHub](https://github.com/pmonks/bookmark-writer).
+Require it in the REPL:
+
+```clojure
+(require '[bookmark-writer.core :as bm])
+```
+
+Require it in your application:
+
+```clojure
+(ns my-app.core
+  (:require [bookmark-writer.core :as bm]))
+```
+
+TODO: provide example usage instructions.
 
 ## Developer Information
 
@@ -32,4 +42,4 @@ Continuous Integration: TODO!
 
 Copyright © 2013,2014 Peter Monks (pmonks@gmail.com)
 
-Distributed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
+Distributed under the [Eclipse Public License](http://www.eclipse.org/legal/epl-v10.html) either version 1.0 or (at your option) any later version.

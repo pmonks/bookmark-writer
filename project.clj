@@ -1,18 +1,20 @@
 ;
-; Copyright © 2013 Peter Monks (pmonks@gmail.com)
+; Copyright © 2014 Peter Monks (pmonks@gmail.com)
 ;
-; This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
-; Unported License. To view a copy of this license, visit
-; http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative
-; Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+; All rights reserved. This program and the accompanying materials
+; are made available under the terms of the Eclipse Public License v1.0
+; which accompanies this distribution, and is available at
+; http://www.eclipse.org/legal/epl-v10.html
 ;
+; Contributors:
+;    Peter Monks - initial implementation
 
-(defproject bookmark-writer "0.1.0-SNAPSHOT"
+(defproject org.clojars.pmonks/bookmark-writer "0.1.0"
+  :description      "A simple and dumb Clojure library that provides the ability to set the text values of bookmarks in Word 2007 (.docx) format files."
+  :url              "https://github.com/pmonks/bookmark-writer"
+  :license          {:name "Eclipse Public License"
+                     :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :min-lein-version "2.0.0"
-  :description "A simple and dumb Clojure library that provides the ability to set the text values of bookmarks in Word 2007 (.docx) format files."
-  :url "https://github.com/pmonks/bookmark-writer"
-  :license {:name "Creative Commons Attribution-ShareAlike 3.0 Unported License."
-            :url "http://creativecommons.org/licenses/by-sa/3.0/"}
   :dependencies [
                   [org.clojure/clojure            "1.5.1"]
                   [org.clojure/tools.logging      "0.2.6"]
@@ -25,7 +27,6 @@
                                  ]}
              :uberjar {:aot :all}}
   :uberjar-merge-with {#"META-INF/services/.*" [slurp str spit]}   ; Merge Java ServiceLocator descriptors during uberjar construction
-  :resource-paths    ["config"]
   :source-paths      ["src/clojure"]
   :java-source-paths ["src/java"]
   :jvm-opts ^:replace []  ; Stop Leiningen from turning off JVM optimisations - makes it slower to start but ensures code runs as fast as possible
