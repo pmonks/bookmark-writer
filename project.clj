@@ -9,7 +9,7 @@
 ; Contributors:
 ;    Peter Monks - initial implementation
 
-(defproject org.clojars.pmonks/bookmark-writer "0.1.0"
+(defproject org.clojars.pmonks/bookmark-writer "0.2.0-SNAPSHOT"
   :description      "A simple and dumb Clojure library that provides the ability to set the text values of bookmarks in Word 2007 (.docx) format files."
   :url              "https://github.com/pmonks/bookmark-writer"
   :license          {:name "Eclipse Public License"
