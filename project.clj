@@ -22,7 +22,7 @@
                   [org.docx4j/docx4j              "3.0.1" :exclusions [log4j org.slf4j/slf4j-log4j12]]
                 ]
   :profiles {:dev {:dependencies [
-                                   [midje          "1.6.2"]
+                                   [midje          "1.6.3"]
                                    [clj-ns-browser "1.3.1"]
                                  ]}
              :uberjar {:aot :all}}
