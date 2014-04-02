@@ -7,9 +7,7 @@ Little more than a Clojure wrapper around [this docx4j sample class](https://git
 
 `bookmarks-writer` is available as a Maven artifact from [Clojars](https://clojars.org/org.clojars.pmonks/bookmark-writer):
 
-```clojure
-[org.clojars.pmonks/bookmarks-writer "0.1.0"]
-```
+[![version](https://clojars.org/org.clojars.pmonks/bookmark-writer/latest-version.svg)](https://clojars.org/org.clojars.pmonks/bookmark-writer)
 
 ## Usage
 
