@@ -16,18 +16,13 @@
                      :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :min-lein-version "2.0.0"
   :dependencies [
-                  [org.clojure/clojure            "1.5.1"]
                   [org.clojure/tools.logging      "0.2.6"]
                   [ch.qos.logback/logback-classic "1.1.2"]
                   [org.docx4j/docx4j              "3.0.1" :exclusions [log4j org.slf4j/slf4j-log4j12]]
                 ]
-  :profiles {:dev {:dependencies [
-                                   [midje          "1.6.3"]
-                                   [clj-ns-browser "1.3.1"]
-                                 ]}
+  :profiles {:dev {:dependencies [[midje "1.6.3"]]}
              :uberjar {:aot :all}}
-  :uberjar-merge-with {#"META-INF/services/.*" [slurp str spit]}   ; Merge Java ServiceLocator descriptors during uberjar construction
+  :uberjar-merge-with {#"META-INF/services/.*" [slurp str spit]}   ; Awaiting Leiningen 2.3.5 - see https://github.com/technomancy/leiningen/issues/1455
   :source-paths      ["src/clojure"]
   :java-source-paths ["src/java"]
-  :jvm-opts ^:replace []  ; Stop Leiningen from turning off JVM optimisations - makes it slower to start but ensures code runs as fast as possible
   :main bookmark-writer.core)
