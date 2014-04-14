@@ -36,6 +36,8 @@ TODO: provide example usage instructions.
 
 Continuous Integration: TODO!
 
+[![endorse](https://api.coderwall.com/pmonks/endorsecount.png)](https://coderwall.com/pmonks)
+
 ## License
 
 Copyright © 2013,2014 Peter Monks (pmonks@gmail.com)
