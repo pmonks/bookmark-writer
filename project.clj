@@ -22,7 +22,7 @@
                   [org.docx4j/docx4j              "3.1.0" :exclusions [log4j org.slf4j/slf4j-log4j12]]
                 ]
   :profiles {:dev {:dependencies [[midje      "1.6.3"]]
-                   :plugins      [[lein-midje "3.1.1"]]}   ; Don't remove this or travis-ci will assplode!
+                   :plugins      [[lein-midje "3.1.3"]]}   ; Don't remove this or travis-ci will assplode!
              :uberjar {:aot :all}}
   :uberjar-merge-with {#"META-INF/services/.*" [slurp str spit]}   ; Awaiting Leiningen 2.3.5 - see https://github.com/technomancy/leiningen/issues/1455
   :source-paths      ["src/clojure"]
