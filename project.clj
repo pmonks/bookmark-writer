@@ -17,7 +17,7 @@
   :min-lein-version "2.0.0"
   :dependencies [
                   [org.clojure/clojure            "1.6.0"]
-                  [org.clojure/tools.logging      "0.2.6"]
+                  [org.clojure/tools.logging      "0.3.0"]
                   [ch.qos.logback/logback-classic "1.1.2"]
                   [org.docx4j/docx4j              "3.1.0" :exclusions [log4j org.slf4j/slf4j-log4j12]]
                 ]
