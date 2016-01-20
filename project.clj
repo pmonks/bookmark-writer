@@ -1,5 +1,5 @@
 ;
-; Copyright © 2014 Peter Monks (pmonks@gmail.com)
+; Copyright © 2014-2016 Peter Monks (pmonks@gmail.com)
 ;
 ; All rights reserved. This program and the accompanying materials
 ; are made available under the terms of the Eclipse Public License v1.0
@@ -14,7 +14,7 @@
   :url              "https://github.com/pmonks/bookmark-writer"
   :license          {:name "Eclipse Public License"
                      :url  "http://www.eclipse.org/legal/epl-v10.html"}
-  :min-lein-version "2.0.0"
+  :min-lein-version "2.5.0"
   :dependencies [
                   [org.clojure/clojure            "1.8.0"]
                   [org.clojure/tools.logging      "0.3.1"]
@@ -24,8 +24,5 @@
   :profiles {:dev {:dependencies [[midje      "1.8.3"]]
                    :plugins      [[lein-midje "3.2"]]}   ; Don't remove this or travis-ci will assplode!
              :uberjar {:aot :all}}
-  :uberjar-merge-with {#"META-INF/services/.*" [slurp str spit]}   ; Awaiting Leiningen 2.3.5 - see https://github.com/technomancy/leiningen/issues/1455
   :source-paths      ["src/clojure"]
-  :java-source-paths ["src/java"]
-  :javac-options     ["-target" "1.6" "-source" "1.6"]
-  :main bookmark-writer.core)
+  :java-source-paths ["src/java"])
