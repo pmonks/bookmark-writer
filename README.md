@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pmonks/bookmark-writer.svg?branch=master)](https://travis-ci.org/pmonks/bookmark-writer)
+[![Build Status](https://travis-ci.com/pmonks/bookmark-writer.svg?branch=master)](https://travis-ci.com/pmonks/bookmark-writer)
 [![Dependencies Status](http://jarkeeper.com/pmonks/bookmark-writer/status.svg)](http://jarkeeper.com/pmonks/bookmark-writer)
 
 # bookmark-writer
@@ -41,6 +41,6 @@ TODO: provide example usage instructions.
 
 ## License
 
-Copyright © 2013-2016 Peter Monks (pmonks@gmail.com)
+Copyright © 2013 Peter Monks (pmonks@gmail.com)
 
 Distributed under the [Eclipse Public License](http://www.eclipse.org/legal/epl-v10.html) either version 1.0 or (at your option) any later version.
