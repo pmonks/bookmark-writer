@@ -16,19 +16,15 @@
                       :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :min-lein-version  "2.8.1"
   :dependencies      [
-                       [org.clojure/clojure            "1.8.0"]
-                       [org.clojure/tools.logging      "0.3.1"]
-                       [ch.qos.logback/logback-classic "1.1.6"]
-                       [org.docx4j/docx4j              "3.2.2" :exclusions [log4j org.slf4j/slf4j-log4j12]]
+                       [org.clojure/clojure             "1.9.0"]
+                       [org.clojure/tools.logging       "0.4.1"]
+                       [ch.qos.logback/logback-classic  "1.2.3"]
+                       [org.docx4j/docx4j               "6.0.1" :exclusions [log4j org.slf4j/slf4j-log4j12]]
+                       [javax.xml.bind/jaxb-api         "2.4.0-b180830.0359"]   ; Required as of JDK11
+                       [org.glassfish.jaxb/jaxb-runtime "2.4.0-b180830.0438"]   ; Required as of JDK11
                      ]
-  :profiles          {:dev {:dependencies [[midje      "1.8.3"]]
-                           :plugins      [[lein-midje "3.2"]]}   ; Don't remove this or travis-ci will assplode!
+  :profiles          {:dev {:dependencies [[midje      "1.9.3"]]
+                            :plugins      [[lein-midje "3.2.1"]]}
                      :uberjar {:aot :all}}
   :source-paths      ["src/clojure"]
-  :java-source-paths ["src/java"]
-  :jvm-opts          ~(let [version     (System/getProperty "java.version")
-                            [major _ _] (clojure.string/split version #"\.")]
-                        (if (>= (java.lang.Integer/parseInt major) 9)
-                          ["--add-modules" "java.xml.bind"]
-                          []))
-  )
+  :java-source-paths ["src/java"])
