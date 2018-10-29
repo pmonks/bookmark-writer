@@ -23,7 +23,7 @@
                        [javax.xml.bind/jaxb-api         "2.4.0-b180830.0359"]   ; Required as of JDK11
                        [org.glassfish.jaxb/jaxb-runtime "2.4.0-b180830.0438"]   ; Required as of JDK11
                      ]
-  :profiles          {:dev {:dependencies [[midje      "1.9.3"]]
+  :profiles          {:dev {:dependencies [[midje      "1.9.4"]]
                             :plugins      [[lein-midje "3.2.1"]]}
                      :uberjar {:aot :all}}
   :source-paths      ["src/clojure"]
